@@ -7,25 +7,26 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
 
     private bool isWalking;
+    private Rigidbody2D playerBody;
+    private Vector3 moveDir;
+
+
+    private void Awake() {
+        playerBody = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
-        // Debug.Log(inputVector);
+
         isWalking = inputVector != Vector2.zero;
 
-        transform.Translate(moveSpeed * Time.deltaTime * inputVector);
+        moveDir = new Vector3(inputVector.x, inputVector.y).normalized;
+    }
 
-
-
-        // Vector2 mousePosition = GameInput.Instance.GetMousePosition();
-        // Vector2 direction = new Vector2(
-        // mousePosition.x - transform.position.x,
-        // mousePosition.y - transform.position.y
-        // );
-
-        // transform.up = direction;
+    private void FixedUpdate() {
+        playerBody.velocity = moveDir * moveSpeed; 
     }
 
     public bool IsWalking(){

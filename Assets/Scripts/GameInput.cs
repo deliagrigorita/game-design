@@ -9,6 +9,7 @@ public class GameInput : MonoBehaviour
 
     private PlayerInput PlayerInput;
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private Animator aimAnimator;
     private Vector2 mousePosition;
 
     private void Awake(){
@@ -16,13 +17,12 @@ public class GameInput : MonoBehaviour
         PlayerInput = new PlayerInput();
         PlayerInput.PlayerControls.Enable();
         PlayerInput.PlayerControls.Attack.performed += ShakeCam;
-        PlayerInput.PlayerControls.MousePosition.performed += OnMouseMove;
+        // PlayerInput.PlayerControls.MousePosition.performed += OnMouseMove;
         mousePosition = new Vector2(0f, 0f);
     }
 
     private void Update() {
         mousePosition = mainCamera.ScreenToWorldPoint(PlayerInput.PlayerControls.MousePosition.ReadValue<Vector2>());
-        
     }
 
     public Vector2 GetMovementVectorNormalized(){
@@ -32,13 +32,9 @@ public class GameInput : MonoBehaviour
         return inputVector;
     }
 
-    void OnMouseMove(InputAction.CallbackContext context){
-        // mousePosition = mainCamera.ScreenToWorldPoint(context.ReadValue<Vector2>());
-    }
-
     void ShakeCam(InputAction.CallbackContext context){
-        Debug.Log(context.phase);
         CinemachineShake.Instance.ShakeCamera(3f, 0.25f);
+        aimAnimator.SetTrigger("Shoot");
     }
 
     public Vector2 GetMousePosition(){
