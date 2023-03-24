@@ -9,13 +9,10 @@ public class PlayerAimWeapon : MonoBehaviour
     private const string WEAPON_IN_FRONT = "WeaponInFront";
 
     private Transform aimTransform;
-    private Animator aimAnimator;
-    private SpriteRenderer weaponSprite;
     private SortingGroup sortingGroup;
 
     private void Awake() {
         aimTransform = transform.Find("Aim");
-        aimAnimator = aimTransform.GetComponent<Animator>();
         sortingGroup = aimTransform.GetComponent<SortingGroup>();
     }
 

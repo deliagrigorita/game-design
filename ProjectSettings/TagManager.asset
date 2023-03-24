@@ -47,9 +47,15 @@ TagManager:
   - name: WeaponBehind
     uniqueID: 3477631873
     locked: 0
+  - name: Enemy
+    uniqueID: 2480345393
+    locked: 0
   - name: Player
     uniqueID: 3588304209
     locked: 0
   - name: WeaponInFront
     uniqueID: 4282673013
+    locked: 0
+  - name: Projectile
+    uniqueID: 2283691483
     locked: 0
