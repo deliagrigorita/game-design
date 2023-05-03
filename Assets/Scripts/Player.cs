@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         isWalking = inputVector != Vector2.zero;
 
         moveDir = new Vector3(inputVector.x, inputVector.y).normalized;
+        // Debug.Log(transform.position);
     }
 
     private void FixedUpdate() {
@@ -44,5 +45,6 @@ public class Player : MonoBehaviour
     public void SetInitialSpeed(){
         this.moveSpeed = 10f;
     }
+
 
 }

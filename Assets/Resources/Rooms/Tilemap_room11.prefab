@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Resources/Rooms/Tilemap_room11.prefab
   - component: {fileID: 482154130859783713}
   - component: {fileID: 482154130859783738}
   - component: {fileID: 482154130859783741}
@@ -15,6 +16,15 @@ GameObject:
   - component: {fileID: 482154130859783743}
   - component: {fileID: 482154130859783742}
   m_Layer: 0
+=======
+  - component: {fileID: 1180296101765607922}
+  - component: {fileID: 1180296101765607913}
+  - component: {fileID: 1180296101765607918}
+  - component: {fileID: 1180296101765607919}
+  - component: {fileID: 1180296101765607916}
+  - component: {fileID: 1180296101765607917}
+  m_Layer: 6
+>>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f:Assets/Resources/Rooms/Tilemap_04_shop.prefab
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

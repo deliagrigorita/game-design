@@ -2889,6 +2889,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Resources/EssentialRooms/Tilemap_03_chest.prefab
   - component: {fileID: 7843634111555490542}
   - component: {fileID: 3232661610659892834}
   - component: {fileID: 4284619219942134360}
@@ -2897,6 +2898,16 @@ GameObject:
   - component: {fileID: 3064954141599424931}
   m_Layer: 0
   m_Name: wallN
+=======
+  - component: {fileID: 3467314348075543654}
+  - component: {fileID: 3467314348075543652}
+  - component: {fileID: 3467314348075543655}
+  - component: {fileID: 3467314348075543653}
+  - component: {fileID: 3467314348075543643}
+  - component: {fileID: 3467314348075543642}
+  m_Layer: 6
+  m_Name: walls
+>>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f:Assets/Resources/Rooms/Tilemap_03_chest.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

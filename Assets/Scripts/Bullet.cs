@@ -30,9 +30,9 @@ public class Bullet : MonoBehaviour
         hitObject = true;
         transform.GetComponent<BoxCollider2D>().enabled = false;
 
-        Target target = collider.GetComponent<Target>();
+        Enemy target = collider.GetComponent<Enemy>();
         if(target != null){
-            target.Damage();
+            // target.Damage();
             Destroy(gameObject, 0.5f);
             hitAnimation.Play("EnemyHitLegacy");
         }else{
