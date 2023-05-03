@@ -49,7 +49,7 @@ public class PlayerAnimator : MonoBehaviour
 
         if(facingRight){
             if(inputVector.x < 0){
-                player.SetSpeed(5f);
+                player.SetSpeed(9f);
                 return true;
             }
             player.SetInitialSpeed();
@@ -57,7 +57,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         else{
             if(inputVector.x > 0){
-                player.SetSpeed(5f);
+                player.SetSpeed(9f);
                 return true;
             }
             player.SetInitialSpeed();
