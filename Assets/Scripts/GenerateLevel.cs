@@ -79,7 +79,7 @@ public class GenerateLevel : MonoBehaviour {
                 occupiedSpace[y, x] = true;
             }
         }
-        ShowMap();
+        //ShowMap();
         return false;
     }
 
@@ -321,7 +321,7 @@ public class GenerateLevel : MonoBehaviour {
         edgeInstances = new GameObject[4];
         CreateLevel();
         FinishLevel();
-        ShowMap();
+        //ShowMap();
     }
 
 }
