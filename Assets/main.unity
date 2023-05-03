@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 155853524}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 221938376}
   - component: {fileID: 221938375}
   - component: {fileID: 221938374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wizard-idle-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 274344782}
   - component: {fileID: 274344783}
   - component: {fileID: 274344784}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373045381}
   - component: {fileID: 373045382}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391311347}
   - component: {fileID: 391311348}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 444914872}
   - component: {fileID: 444914873}
   - component: {fileID: 444914874}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: testplayer-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,7 +871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681080587}
   - component: {fileID: 681080588}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: ef_2_00002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710099690}
   - component: {fileID: 710099691}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: ef_2_00000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 943281176}
   - component: {fileID: 943281175}
   - component: {fileID: 943281177}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032297232}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: GunEndPointPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 1277940175}
   - component: {fileID: 1277940176}
   - component: {fileID: 1277940177}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1447,7 +1447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380359401}
   - component: {fileID: 1380359402}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514085230}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1718,7 +1718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772836045}
   - component: {fileID: 1772836046}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: EnemyProjectilePosition (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2130,7 +2130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000148668}
   - component: {fileID: 2000148669}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: ef_2_00001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069493415}
   - component: {fileID: 2069493416}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: EnemyProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
