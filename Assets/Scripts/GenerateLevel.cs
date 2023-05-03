@@ -6,7 +6,6 @@ using UnityEngine;
 using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
 using System.Linq;
-using System.Diagnostics;
 using System.Text;
 using System.IO;
 
@@ -166,7 +165,7 @@ public class GenerateLevel : MonoBehaviour {
         do {
             new_room_index = random.Next(0, numberOfRooms);
             ++local_i;
-            if (local_i == 15) {
+            if (local_i == 100) {
                 flag = false;
                 break;
             }
@@ -225,6 +224,7 @@ public class GenerateLevel : MonoBehaviour {
 
     void CreateLevel() {
         essentialRoomList = Resources.LoadAll<GameObject>("EssentialRooms");
+        Debug.Log(essentialRoomList.Length);
         roomList = Resources.LoadAll<GameObject>("Rooms");
         pathList = Resources.LoadAll<GameObject>("Paths");
         numberOfRooms = roomList.Length;

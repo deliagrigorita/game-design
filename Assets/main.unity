@@ -1248,7 +1248,7 @@ Transform:
   m_Children:
   - {fileID: 545800522}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078418351
 GameObject:
@@ -2019,11 +2019,7 @@ SortingGroup:
   m_SortingLayerID: 1274015149
   m_SortingLayer: 1
   m_SortingOrder: 0
-<<<<<<< HEAD
 --- !u!1 &1940620289
-=======
---- !u!1 &1984553427
->>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2031,34 +2027,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 1940620290}
   - component: {fileID: 1940620292}
   - component: {fileID: 1940620291}
   m_Layer: 0
   m_Name: Visual
-=======
-  - component: {fileID: 1984553428}
-  - component: {fileID: 1984553429}
-  m_Layer: 0
-  m_Name: SimpleParticles
->>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!4 &1940620290
-=======
---- !u!4 &1984553428
->>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1940620289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2070,24 +2054,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &1940620291
 Animation:
-=======
-  m_GameObject: {fileID: 1984553427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4942937, y: 4.223795, z: -0.028281692}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1984553429
-MonoBehaviour:
->>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1940620289}
   m_Enabled: 1
   serializedVersion: 3
@@ -2150,15 +2120,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
-  m_GameObject: {fileID: 1984553427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e0cfa044da98343a95216bc29dd683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyProjectileHit: {fileID: 4021103657954561942, guid: 4f8f3e55ea7f55148a46126002da1399, type: 3}
->>>>>>> d6871eb10c3d5d01e8e60f7c2891f8903bfd300f
 --- !u!1 &2000148667
 GameObject:
   m_ObjectHideFlags: 0

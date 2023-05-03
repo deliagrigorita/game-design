@@ -30,7 +30,7 @@ public class EnemyProjectile : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Particles.Instance.PlayEnemyProjectileHit(transform.position);
+        //Particles.Instance.PlayEnemyProjectileHit(transform.position);
         Destroy(gameObject);
 
         // if(other.CompareTag("Player")){

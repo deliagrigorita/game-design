@@ -5000,7 +5000,7 @@ GameObject:
   - component: {fileID: 4182844554023849352}
   - component: {fileID: 4182844554023849355}
   - component: {fileID: 4182844554023849354}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
