@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -11,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - EnemyProjectile
   - 
   - 
   - 
@@ -47,6 +48,9 @@ TagManager:
   - name: WeaponBehind
     uniqueID: 3477631873
     locked: 0
+  - name: Enemy
+    uniqueID: 2480345393
+    locked: 0
   - name: Player
     uniqueID: 3588304209
     locked: 0
@@ -55,4 +59,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1827510383
+  - name: Projectile
+    uniqueID: 2283691483
+    locked: 0
+  - name: ObjectsInFront
+    uniqueID: 2780606875
     locked: 0
