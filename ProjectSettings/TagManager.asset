@@ -57,6 +57,8 @@ TagManager:
   - name: WeaponInFront
     uniqueID: 4282673013
     locked: 0
+  - name: UI
+    uniqueID: 1827510383
   - name: Projectile
     uniqueID: 2283691483
     locked: 0
