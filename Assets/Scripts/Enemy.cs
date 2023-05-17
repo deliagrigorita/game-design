@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,7 +12,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float startTimeBtwShots;
     [SerializeField] GameObject enemyProjectile;
 
+    public int assignedRoom = int.MaxValue;
+
     private Transform player;
+    private Player playerObject;
     private float timeBtwShots;
     private Rigidbody2D enemyBody;
     private Vector3 moveDir;
@@ -30,6 +35,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemyShootProjectiles = transform.GetComponentsInChildren<EnemyShootProjectile>();
     }
 
@@ -40,6 +46,10 @@ public class Enemy : MonoBehaviour
         //     playerWasRight = PlayerRight();
         //     timeWait = 15;
         // }
+
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
 
         if(!colliding){
             moveDir = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
