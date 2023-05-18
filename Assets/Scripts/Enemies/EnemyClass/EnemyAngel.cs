@@ -22,6 +22,9 @@ public class EnemyAngel : Enemy
     }
 
     protected override void Update() {
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
         Shoot();
         if(!shooting){
             Move();

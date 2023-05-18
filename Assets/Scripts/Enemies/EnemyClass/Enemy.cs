@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float enemySpeed;
     [SerializeField] protected float startTimeBtwShots;
 
+    public int assignedRoom = int.MaxValue;
+
+    protected Player playerObject;
     protected Transform player;
     protected float timeBtwShots;
     protected Rigidbody2D enemyBody;
@@ -24,6 +27,7 @@ public class Enemy : MonoBehaviour
         enemyBody = GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
         colliding = false;
+        playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // protected virtual void Start()
@@ -36,6 +40,10 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
+
         Move();
 
         Shoot();
