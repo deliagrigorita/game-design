@@ -17,6 +17,9 @@ public class EnemyBat : Enemy
     }
 
     protected override void Update(){
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
         if(Vector2.Distance(transform.position, player.position) > stoppingDistance){
             Move();
         }

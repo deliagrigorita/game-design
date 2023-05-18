@@ -20,6 +20,9 @@ public class EnemyBurningGhoul : Enemy
     }
 
     protected override void Update(){
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
         Move();
         PlayDustParticle();
     }
