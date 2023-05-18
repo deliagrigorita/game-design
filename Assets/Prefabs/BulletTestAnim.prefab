@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476969183642435853}
   - component: {fileID: 476969183642435852}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 2ndPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476969183803280603}
   - component: {fileID: 476969183803280602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 3rdPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476969184405456446}
   - component: {fileID: 476969184405456417}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 4thPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 435663071155400404}
   - component: {fileID: 476969185357334647}
   - component: {fileID: 1474954863794604364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletTestAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476969185391069240}
   - component: {fileID: 476969185391069243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 1ftPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476969185468034739}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyHitAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4303676237736393041}
   - component: {fileID: 4890197244804935526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX001_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807919654736681659}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ObjectHitAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157638109956041881}
   - component: {fileID: 8688944149193998895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX001_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9123039686266931103}
   - component: {fileID: 7881068363031286136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX001_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3960754832608894178}
   - component: {fileID: 4828095200171221149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4854694286568168895}
   - component: {fileID: 714755672755372014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX001_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8453898243891807664}
   - component: {fileID: 2296034713838888318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX001_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
