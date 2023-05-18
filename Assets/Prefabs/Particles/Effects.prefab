@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8630017273024516496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8630017273024516498}
+  - component: {fileID: 8630017273024516499}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8630017273024516498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630017273024516496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.1987672, y: 4.101994, z: -0.013127137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8630017273024516499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630017273024516496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e783637ebc63e78488a3ff56ffe080bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultBulletHitEnemy: {fileID: 5279631379101025562, guid: d40f2a9a97fc6a748b3dcb7d51126601, type: 3}
+  enemyProjectileHit: {fileID: 4021103657954561942, guid: 4f8f3e55ea7f55148a46126002da1399, type: 3}
+  enemyWizardAttack: {fileID: 4576714568646021646, guid: f681f3b7cdf470d49ab82ab9f610ca6d, type: 3}
+  enemyWizardHit: {fileID: 6782727029475001353, guid: 1dcc8c462431a804a85d3876d0443fc3, type: 3}
+  enemyIceWitchAttack: {fileID: 7061235445022415517, guid: 50c981d7f106ed5439629084c7c7c34f, type: 3}
+  enemyIceWitchHit: {fileID: 4115890232823512251, guid: 71aecc4eabfe0a14abcbb550e634264c, type: 3}
+  enemyBurningGhoulWalk: {fileID: 7348945786822583047, guid: 45ce43ace7f0a634bb1c784787023140, type: 3}
+  enemyBurningGhoulExplosion: {fileID: 8680843543193898613, guid: 78f05c17d21d63c4f949421138275830, type: 3}
+  enemyAngelAttack: {fileID: 9094912590576441064, guid: 82cb969dd92cbe749ace37b31b39e98c, type: 3}
+  enemyAngelHit: {fileID: 623530616310233997, guid: aceb48ca082560a4081c40552827b860, type: 3}
+  enemyBatAttack: {fileID: 2039013019411682504, guid: d2c91d6e9f160914a8839f4d7186ac8f, type: 3}
+  enemyBatHit: {fileID: 7334201710958325604, guid: 9341875ec8f19614cabe5583dbf48b22, type: 3}
+  enemyDeath: {fileID: 6428536060011801189, guid: 7feee13fdf4136748a3a34edef549854, type: 3}
