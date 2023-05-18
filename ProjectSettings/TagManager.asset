@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FxTemporaire
+  - Portal
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: WeaponInFront
     uniqueID: 4282673013
+    locked: 0
+  - name: UI
+    uniqueID: 1827510383
     locked: 0
   - name: Projectile
     uniqueID: 2283691483

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
 
+    public int currentRoom = 0;
     private bool isWalking;
     private Rigidbody2D playerBody;
     private Vector3 moveDir;
@@ -43,6 +44,10 @@ public class Player : MonoBehaviour
 
     public void SetInitialSpeed(){
         this.moveSpeed = 10f;
+    }
+
+    public void SetRoom(int roomIndex) {
+        currentRoom = roomIndex;
     }
 
 

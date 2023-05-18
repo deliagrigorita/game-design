@@ -13,6 +13,7 @@ public class GenerateLevel : MonoBehaviour {
 
     System.Random random = new System.Random();
     HashSet<int> usedRoomIndexes = new HashSet<int>();
+    GameObject[] enemyList;
     GameObject[] roomList;
     GameObject[] pathList;
     GameObject[] essentialRoomList = new GameObject[5];
@@ -22,6 +23,7 @@ public class GenerateLevel : MonoBehaviour {
     int[,] roomSpace;
     int[,] essentialRoomSpace = new int[5, 2];
     int[,] edges = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0} }; // y, x, room_index
+    int numberOfEnemyTypes;
     int numberOfRooms;
     int max_h = 0;
     int max_w = 0;
@@ -31,11 +33,11 @@ public class GenerateLevel : MonoBehaviour {
     //int max_depth = 5;
     //int max_rooms = 20;
     //int min_rooms = 15;
-    int current_rooms = 1;
+    int current_rooms = 0;
     int o_x;
     int o_y;
 
-    void RemoveWall(GameObject room, int door) {
+    void RemoveWall(GameObject room, int door, bool prev=false) {
         GameObject wallObject;
         GameObject doorObject;
         switch(door) {
@@ -57,7 +59,8 @@ public class GenerateLevel : MonoBehaviour {
                 break;
         }
         wallObject.SetActive(false);
-        //doorObject.SetActive(true);
+        doorObject.SetActive(true);
+        doorObject.GetComponent<Portal>().roomIndex = prev ? current_rooms - 1 : current_rooms;
     }
 
     bool IsOccupied(int room_y, int room_x, int room_index) {
@@ -138,6 +141,7 @@ public class GenerateLevel : MonoBehaviour {
     }
 
     void AddRoom(GameObject currentRoom, int direction, int room_x, int room_y, int room_index, int current_depth) {
+        ++current_rooms;
         int path_x = room_x;
         int path_y = room_y;
         int new_room_x = room_x;
@@ -192,12 +196,11 @@ public class GenerateLevel : MonoBehaviour {
             return;
         }
 
-        RemoveWall(currentRoom, (direction + 2) % 4);
+        RemoveWall(currentRoom, (direction + 2) % 4, true);
         GameObject inst_p = AddToGrid(pathList[direction % 2], (path_x - o_x) * 10, (path_y - o_y) * 10);
         occupiedSpace[path_y, path_x] = true;
         GameObject inst_r = AddToGrid(roomList[new_room_index], (new_room_x - o_x) * 10, (new_room_y - o_y) * 10);
         RemoveWall(inst_r, direction);
-        ++current_rooms;
         CheckVEdge(new_room_y, new_room_x, new_room_index, inst_r);
         CheckHEdge(new_room_y, new_room_x, new_room_index, inst_r);
 
@@ -206,6 +209,9 @@ public class GenerateLevel : MonoBehaviour {
         int paths = random.Next(2, 3);
         ++current_depth;
         usedRoomIndexes.Add(new_room_index);
+
+        SpawnEnemies(inst_r);
+
         if(current_depth == max_depth) {
             return;
         }
@@ -217,17 +223,31 @@ public class GenerateLevel : MonoBehaviour {
 
     GameObject AddToGrid(GameObject gameObject, int x, int y) {
         GameObject inst = Instantiate(gameObject, new Vector2(x, y), Quaternion.identity);
+        Variables.Object(inst).Set("Index", current_rooms);
         grid = GameObject.Find("Grid");
         inst.transform.parent = grid.transform;
         return inst;
     }
 
+    void SpawnEnemies(GameObject roomInstance) {
+        Debug.Log(enemyList.Length);
+        Debug.Log(numberOfEnemyTypes);
+        Transform[] spawnpoints = roomInstance.GetComponentsInChildren<Transform>().Where(child=> child.tag == "Spawnpoint").ToArray();
+        foreach(Transform t in spawnpoints) {
+            GameObject enemy = Instantiate(enemyList[random.Next(numberOfEnemyTypes)], t.position, Quaternion.identity);
+            Destroy(t.gameObject);
+            enemy.GetComponent<Enemy>().assignedRoom = current_rooms;
+            enemy.transform.parent = roomInstance.transform;
+        }
+    }
+
     void CreateLevel() {
         essentialRoomList = Resources.LoadAll<GameObject>("EssentialRooms");
-        Debug.Log(essentialRoomList.Length);
         roomList = Resources.LoadAll<GameObject>("Rooms");
         pathList = Resources.LoadAll<GameObject>("Paths");
+        enemyList = Resources.LoadAll<GameObject>("EnemyPrefabs");
         numberOfRooms = roomList.Length;
+        numberOfEnemyTypes = enemyList.Length;
         roomSpace = new int[numberOfRooms, 2];
         for(int i = 0; i < numberOfRooms; ++i) {
             int h = (int)Variables.Object(roomList[i]).Get("h");
@@ -268,7 +288,9 @@ public class GenerateLevel : MonoBehaviour {
     }
 
     void FinishLevel() {
+        // TODO: reparat bug index portal muchii.. poate alta data..
         int[] order = { 4, 1, 2, 3 };
+        current_rooms = -1;
         order = order.OrderBy(x => random.Next()).ToArray();
         for(int i = 0; i < 4; ++i) {
             int path_y = (edges[i, 0] - o_y) * 10;
