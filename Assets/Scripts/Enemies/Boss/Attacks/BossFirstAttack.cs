@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestAimRotation : MonoBehaviour
+public class BossFirstAttack : MonoBehaviour
 {
     private float timeToShoot = 3f;
     private float waitTimeToShoot = 0f;
@@ -17,19 +17,19 @@ public class TestAimRotation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(waitTimeToShoot <= 0){
-            Shoot();
-            waitTimeToShoot = timeToShoot;
-        }
-        waitTimeToShoot -= Time.deltaTime;
-    }
+    // void Update()
+    // {
+    //     if(waitTimeToShoot <= 0){
+    //         Shoot();
+    //         waitTimeToShoot = timeToShoot;
+    //     }
+    //     waitTimeToShoot -= Time.deltaTime;
+    // }
 
-    private void Shoot(){
+    public void Shoot(){
         HandleAiming();
         foreach(EnemyShootProjectile gun in enemyShootProjectiles){
-                Effects.Instance.PlayEnemyIceWitchAttack(gun.transform.position);
+                Effects.Instance.PlayBossFirstAttack(gun.transform.position);
                 gun.EnemyShoot();
             }
     }

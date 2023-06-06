@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,10 @@ public class BossAnimation : MonoBehaviour
     private Transform parentTrsf;
     private Vector3 posIfPlayerLeft;
     private Vector3 posIfPlayerRight;
+    [SerializeField] private Boss boss;
 
     private void Awake() {
+        //Boss is not in the centre of the image, position to calculate rotation:
         posIfPlayerLeft = new Vector3(-2, 1);
         posIfPlayerRight = new Vector3(2 , 1);
         animator = GetComponent<Animator>(); 
@@ -22,6 +25,8 @@ public class BossAnimation : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         parentTrsf = transform.parent;
+        boss.OnAttack1 += SwordAnimate;
+        boss.OnAttack2 += CastAnimate;
     }
 
     void Update()
@@ -42,4 +47,13 @@ public class BossAnimation : MonoBehaviour
     private bool PlayerRight(){
         return player.position.x > parentTrsf.position.x;
     }
+
+    private void SwordAnimate(object sender, EventArgs e){
+        animator.Play("Attack");
+    }
+
+    private void CastAnimate(object sender, EventArgs e){
+        animator.Play("Cast");
+    }
+
 }
