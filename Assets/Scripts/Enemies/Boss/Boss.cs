@@ -41,7 +41,7 @@ public class Boss : MonoBehaviour
         enemyBody = GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
         bossHealth = 100f;
-        //bossHealthBar.SetMaxHealth(bossHealth);
+        bossHealthBar.SetMaxHealth(bossHealth);
         colliding = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -166,11 +166,11 @@ public class Boss : MonoBehaviour
 
     public void Damage(){
         bossHealth -= 10;
-       // bossHealthBar.SetHealth(bossHealth);
+       bossHealthBar.SetHealth(bossHealth);
 
         if(bossHealth <= 0){
             Effects.Instance.PlayBossDeath(transform.position);
-           // bossHealthBar.DestroyHealthBar();
+           bossHealthBar.DestroyHealthBar();
             Destroy(gameObject);
         }
     }
