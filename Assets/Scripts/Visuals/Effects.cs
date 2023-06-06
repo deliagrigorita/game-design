@@ -17,7 +17,12 @@ public class Effects : MonoBehaviour
     public Transform enemyAngelHit;
     public Transform enemyBatAttack;
     public Transform enemyBatHit;
+    public Transform bossFirstAttack;
+    public Transform bossFirstAttackHit;
+    public Transform bossThirdAttack;
+    public Transform bossThirdAttackHit;
     public Transform enemyDeath;
+    public Transform bossDeath;
 
     private void Awake() {
         Instance = this;
@@ -71,8 +76,28 @@ public class Effects : MonoBehaviour
         Instantiate(enemyBatHit, position, Quaternion.identity);
     }
 
+    public void PlayBossFirstAttack(Vector2 position){
+        Instantiate(bossFirstAttack, position, Quaternion.identity);
+    }
+
+    public void PlayBossFirstAttackHit(Vector2 position){
+        Instantiate(bossFirstAttackHit, position, Quaternion.identity);
+    }
+
+    public void PlayBossThirdAttack(Vector2 position){
+        Instantiate(bossThirdAttack, position, Quaternion.identity);
+    }
+
+    public void PlayBossThirdAttackHit(Vector2 position){
+        Instantiate(bossThirdAttackHit, position, Quaternion.identity);
+    }
+
     public void PlayEnemyDeath(Vector2 position){
         Instantiate(enemyDeath, position, Quaternion.identity);
+    }
+
+    public void PlayBossDeath(Vector2 position){
+        Instantiate(bossDeath, position, Quaternion.identity);
     }
 }
 

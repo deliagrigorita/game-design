@@ -6,6 +6,7 @@ public class EnemyBatProjectile : EnemyProjectile
 {
     private void OnTriggerEnter2D(Collider2D other) {
         Effects.Instance.PlayEnemyBatHit(transform.position);
+        DamagePlayer(other);
         Destroy(gameObject);
     }
 }
