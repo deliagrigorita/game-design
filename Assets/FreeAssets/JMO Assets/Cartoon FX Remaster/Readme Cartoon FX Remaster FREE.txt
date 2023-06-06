@@ -1,5 +1,5 @@
 ﻿Cartoon FX Remaster FREE, version R 1.0
-2023/03/13
+2023/05/08
 © 2012-2023 - Jean Moreno
 =======================================
 
@@ -47,26 +47,6 @@ This is because:
 - prefabs are all already optimized and use a relatively small number of particles each
 
 
-CARTOON FX EASY EDITOR
-----------------------
-You can find this tool in the menu:
-| Tools > Cartoon FX > Cartoon FX Easy Editor
-It allows you to easily change one or several Particle Systems properties:
-
-"Scale Size" to change the size of your Particle Systems (changing speed, velocity, gravity, etc. values to get an accurate scaled up version of the system).
-It will also scale lights' intensity accordingly if any are found.
-Tip: If you don't want to scale a particular module, disable it before scaling the system and re-enable it afterwards!
-
-"Set Speed" to change the playback speed of your Particle Systems in percentage according to the base effect speed. 100% = normal speed.
-
-"Tint Colors" to change the hue only of the colors of your Particle Systems (including gradients).
-
-The "Copy Modules" section allows you to copy all values/curves/gradients/etc. from one or several Shuriken modules to one or several other Particle Systems.
-Just select which modules you want to copy, choose the source Particle System to copy values from, select the GameObjects you want to change, and click on "Copy properties to selected GameObject(s)".
-
-Note: "Include Children" works for both Properties and Copy Modules sections!
-
-
 TROUBLESHOOTING
 ---------------
 
@@ -98,6 +78,9 @@ I'd be happy to see any effects used in your project, so feel free to drop me a 
 
 RELEASE NOTES
 -------------
+
+R 1.0.5
+- Removed mentions of the "Cartoon FX Easy Editor" in the readme files as it is not included with the free version of Cartoon FX Remaster
 
 R 1.0.4
 - Reorganized the shader code in a separate file to avoid a 'multi_compile' hack, which will hopefully fix issues with Asset Bundles/Addressables
