@@ -22,10 +22,16 @@ public class EnemyShootProjectile : MonoBehaviour
     public void EnemyShoot(){
         GameObject projGameObject = Instantiate(enemyProjectile, transform.position, Quaternion.identity);
         EnemyIceProjectile proj = projGameObject.GetComponent<EnemyIceProjectile>();
+        BossFirstProjectile bossProj = projGameObject.GetComponent<BossFirstProjectile>();
 
         if(proj != null){
             direction = ((transform.localRotation * parentTrsf.localRotation) * Vector2.right).normalized;
             proj.SetDirection(direction);
+        }
+
+        if(bossProj != null){
+            direction = ((transform.localRotation * parentTrsf.localRotation) * Vector2.right).normalized;
+            bossProj.SetDirection(direction);
         }
     }
 }

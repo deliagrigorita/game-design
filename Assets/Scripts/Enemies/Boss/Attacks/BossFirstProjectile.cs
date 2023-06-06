@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyIceProjectile : EnemyProjectile
+public class BossFirstProjectile : EnemyProjectile
 {
     private float timePassed;
     
@@ -21,17 +21,17 @@ public class EnemyIceProjectile : EnemyProjectile
         transform.position += shootDir * speed * Time.deltaTime;
         
         timePassed++;
-        if(timePassed > 130){
-            speed = 20f;
-        }else if(timePassed > 110){
-            speed = 5f;
+        if(timePassed > 110){
+            speed = 25f;
         }else if(timePassed > 80){
-            speed = 3f;
+            speed = 4f;
+        }else if(timePassed > 50){
+            speed = 2f;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Effects.Instance.PlayEnemyIceWitchHit(transform.position);
+        Effects.Instance.PlayBossFirstAttackHit(transform.position);
         DamagePlayer(other);
         Destroy(gameObject);
     }

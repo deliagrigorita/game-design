@@ -39,6 +39,7 @@ public class EnemyBurningGhoul : Enemy
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
             Explode();
+            HealthController.Instance.Damage(2);
         }
     }
 

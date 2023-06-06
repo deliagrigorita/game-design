@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    protected float speed;
+    [SerializeField] protected float speed;
 
     protected Transform player;
     protected Vector3 shootDir;
@@ -31,6 +31,12 @@ public class EnemyProjectile : MonoBehaviour
 
     public void SetSpeed(float newspeed){
         speed = newspeed;
+    }
+
+    public void DamagePlayer(Collider2D other){
+        if(other.CompareTag("Player")){
+            HealthController.Instance.Damage(1);
+        }
     }
 
 }
