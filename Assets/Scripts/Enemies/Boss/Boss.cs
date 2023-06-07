@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
 
     public int assignedRoom = int.MaxValue / 2;
 
+    protected GameObject healthBar;
     protected Player playerObject;
     protected Transform player;
     protected float timeBtwShots;
@@ -45,6 +46,8 @@ public class Boss : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
         bossHealth = 100f;
         bossHealthBar.SetMaxHealth(bossHealth);
+        healthBar = GameObject.FindGameObjectWithTag("BossHealthBar");
+        healthBar.SetActive(false);
         colliding = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -181,4 +184,9 @@ public class Boss : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void ActivateBar(bool active) {
+        healthBar.SetActive(active);
+    }
+
 }

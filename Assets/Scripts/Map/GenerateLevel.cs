@@ -227,11 +227,16 @@ public class GenerateLevel : MonoBehaviour {
         }
     }
 
-    GameObject AddToGrid(GameObject gameObject, int x, int y, bool boss=false) {
+    GameObject AddToGrid(GameObject gameObject, int x, int y, bool bossBool=false) {
         GameObject inst = Instantiate(gameObject, new Vector2(x, y), Quaternion.identity);
-        Variables.Object(inst).Set("Index", boss ? int.MaxValue / 2 : current_rooms);
+        Variables.Object(inst).Set("Index", bossBool ? int.MaxValue / 2 : current_rooms);
         grid = GameObject.Find("Grid");
         inst.transform.parent = grid.transform;
+        if(bossBool) {
+            GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+            boss.transform.position = new Vector2(x, y);
+            boss.transform.parent = inst.transform;
+        }
         return inst;
     }
 
