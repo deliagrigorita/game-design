@@ -12,6 +12,9 @@ public class Boss : MonoBehaviour
     [SerializeField] private BossHealthBar bossHealthBar;
     [SerializeField] private float bossHealth;
 
+    public int assignedRoom = int.MaxValue / 2;
+
+    protected Player playerObject;
     protected Transform player;
     protected float timeBtwShots;
     protected Rigidbody2D enemyBody;
@@ -44,10 +47,14 @@ public class Boss : MonoBehaviour
         //bossHealthBar.SetMaxHealth(bossHealth);
         colliding = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     protected virtual void Update()
     {
+        if(playerObject.currentRoom != assignedRoom) {
+            return;
+        }
         Move();
 
         if(attackTime < 0){
