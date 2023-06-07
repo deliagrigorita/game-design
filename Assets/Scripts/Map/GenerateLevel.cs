@@ -37,7 +37,7 @@ public class GenerateLevel : MonoBehaviour {
     int o_x;
     int o_y;
 
-    void RemoveWall(GameObject room, int door, bool prev=false) {
+    void RemoveWall(GameObject room, int door, bool prev=false, bool boss=false) {
         GameObject wallObject;
         GameObject doorObject;
         switch(door) {
@@ -60,7 +60,13 @@ public class GenerateLevel : MonoBehaviour {
         }
         wallObject.SetActive(false);
         doorObject.SetActive(true);
-        doorObject.GetComponent<Portal>().roomIndex = prev ? current_rooms - 1 : current_rooms;
+        int index = (int)Variables.Object(room).Get("Index");
+        int val = boss ? int.MaxValue / 2 : prev ? index : current_rooms;
+        if(val == -2) {
+            doorObject.GetComponent<Portal>().roomIndex = int.MaxValue / 2;
+        } else {
+            doorObject.GetComponent<Portal>().roomIndex = val;
+        }
     }
 
     bool IsOccupied(int room_y, int room_x, int room_index) {
@@ -221,17 +227,15 @@ public class GenerateLevel : MonoBehaviour {
         }
     }
 
-    GameObject AddToGrid(GameObject gameObject, int x, int y) {
+    GameObject AddToGrid(GameObject gameObject, int x, int y, bool boss=false) {
         GameObject inst = Instantiate(gameObject, new Vector2(x, y), Quaternion.identity);
-        Variables.Object(inst).Set("Index", current_rooms);
+        Variables.Object(inst).Set("Index", boss ? int.MaxValue / 2 : current_rooms);
         grid = GameObject.Find("Grid");
         inst.transform.parent = grid.transform;
         return inst;
     }
 
     void SpawnEnemies(GameObject roomInstance) {
-        Debug.Log(enemyList.Length);
-        Debug.Log(numberOfEnemyTypes);
         Transform[] spawnpoints = roomInstance.GetComponentsInChildren<Transform>().Where(child=> child.tag == "Spawnpoint").ToArray();
         foreach(Transform t in spawnpoints) {
             GameObject enemy = Instantiate(enemyList[random.Next(numberOfEnemyTypes)], t.position, Quaternion.identity);
@@ -292,10 +296,15 @@ public class GenerateLevel : MonoBehaviour {
         int[] order = { 4, 1, 2, 3 };
         current_rooms = -1;
         order = order.OrderBy(x => random.Next()).ToArray();
+        bool boss = false;
+        GameObject inst;
         for(int i = 0; i < 4; ++i) {
             int path_y = (edges[i, 0] - o_y) * 10;
             int path_x = (edges[i, 1] - o_x) * 10;
             int addition;
+            if (order[i] == 1) {
+                boss = true;
+            }
             if(i % 2 == 1) {
                 RemoveWall(edgeInstances[i], i);
                 int sign = i < 2 ? 1 : -1;
@@ -305,8 +314,8 @@ public class GenerateLevel : MonoBehaviour {
                 }
                 path_x -= sign * 10;
                 addition = RoomDistance(order[i], 1, true) * 10;
-                GameObject inst = AddToGrid(essentialRoomList[order[i]], path_x + sign * addition, path_y);
-                RemoveWall(inst, (i + 2) % 4);
+                inst = AddToGrid(essentialRoomList[order[i]], path_x + sign * addition, path_y, boss);
+                RemoveWall(inst, (i + 2) % 4, boss);
             } else {
                 RemoveWall(edgeInstances[i], (i + 2) % 4);
                 int sign = i > 0 ? 1 : -1;
@@ -316,9 +325,10 @@ public class GenerateLevel : MonoBehaviour {
                 }
                 path_y -= sign * 10;
                 addition = RoomDistance(order[i], 0, true) * 10;
-                GameObject inst = AddToGrid(essentialRoomList[order[i]], path_x, path_y + sign * addition);
-                RemoveWall(inst, i);
+                inst = AddToGrid(essentialRoomList[order[i]], path_x, path_y + sign * addition, boss);
+                RemoveWall(inst, i, boss);
             }
+            boss = false;
         }
     }
 
