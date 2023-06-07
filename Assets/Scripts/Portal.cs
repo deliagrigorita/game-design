@@ -10,7 +10,9 @@ public class Portal : MonoBehaviour {
         Player playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         playerObject.SetRoom(roomIndex);
         if(roomIndex == int.MaxValue / 2) {
-            GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>().ActivateBar();
+            GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>().ActivateBar(true);
+        } else {
+            GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>().ActivateBar(false);
         }
     }
 

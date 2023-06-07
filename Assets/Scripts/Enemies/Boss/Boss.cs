@@ -185,8 +185,8 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ActivateBar() {
-        healthBar.SetActive(true);
+    public void ActivateBar(bool active) {
+        healthBar.SetActive(active);
     }
 
 }
