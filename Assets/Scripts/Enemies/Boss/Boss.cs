@@ -40,6 +40,9 @@ public class Boss : MonoBehaviour
     //third-attack
     [SerializeField] GameObject attack3;
 
+    //end game script
+    [SerializeField] GameObject endGame;
+
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
@@ -178,6 +181,7 @@ public class Boss : MonoBehaviour
         if(bossHealth <= 0){
             Effects.Instance.PlayBossDeath(transform.position);
            bossHealthBar.DestroyHealthBar();
+           Instantiate(endGame, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
