@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Portal
   - Spawnpoint
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - EnemyProjectile
   - ExplodingEnemy
   - PlayerBullet
-  - 
+  - Portal
   - 
   - 
   - 
