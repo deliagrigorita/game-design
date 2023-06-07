@@ -1836,6 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a88e6e88dd2454184167633796362d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   playerHealth: 6
   hearts:
   - {fileID: 7819803349491871362}
