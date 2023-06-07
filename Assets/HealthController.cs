@@ -25,6 +25,7 @@ public class HealthController : MonoBehaviour
          if (playerHealth <= 0)
          {
             //restart game
+            AudioManager.Instance.Play("PlayerDeath");
          }
 
         for (int i = 0; i < hearts.Length; i++)
