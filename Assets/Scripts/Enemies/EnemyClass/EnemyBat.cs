@@ -34,6 +34,7 @@ public class EnemyBat : Enemy
 
     protected override void Shoot(){
         if(timeBtwShots <= 0){
+            AudioManager.Instance.Play("PebbleStart");
             foreach(EnemyShootProjectile gun in enemyShootProjectiles){
                 Effects.Instance.PlayEnemyBatAttack(gun.transform.position);
                 gun.EnemyShoot();

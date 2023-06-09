@@ -6,7 +6,7 @@ public class EnemyWizard : Enemy
 {
     void Start()
     {
-        enemyHealthSystem = new EnemyHealthSystem(100);
+        enemyHealthSystem = new EnemyHealthSystem(80);
         enemyHealthBar.Setup(enemyHealthSystem);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyShootProjectiles = transform.GetComponentsInChildren<EnemyShootProjectile>();

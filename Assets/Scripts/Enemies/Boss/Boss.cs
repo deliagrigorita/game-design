@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private float bossHealth;
 
     public int assignedRoom = int.MaxValue / 2;
+    protected GameObject healthBar;
 
     protected Player playerObject;
     protected Transform player;
@@ -20,11 +21,12 @@ public class Boss : MonoBehaviour
     protected Rigidbody2D enemyBody;
     protected Vector3 moveDir;
     protected bool colliding;
-    protected float timeWait = 120;
+    protected float timeWait = 60;
     protected bool playerWasUp;
     protected bool playerWasRight;
     protected Vector2 collidePoint;
     // protected EnemyShootProjectile[] enemyShootProjectiles;
+    protected bool startedPlayingBossTheme = false;
 
 
     //Attacks:
@@ -46,8 +48,10 @@ public class Boss : MonoBehaviour
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
-        bossHealth = 100f;
+        bossHealth = 2000f;
         bossHealthBar.SetMaxHealth(bossHealth);
+        healthBar = GameObject.FindGameObjectWithTag("BossHealthBar");
+        healthBar.SetActive(false);
         colliding = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -58,12 +62,15 @@ public class Boss : MonoBehaviour
         if(playerObject.currentRoom != assignedRoom) {
             return;
         }
+        if(!startedPlayingBossTheme){
+            AudioManager.Instance.Stop("MainTheme");
+            AudioManager.Instance.Play("BossTheme");
+            startedPlayingBossTheme = true;
+        }
         Move();
 
         if(attackTime < 0){
             Shoot();
-        }else{
-            attackTime -= 1;
         }
     }
 
@@ -107,15 +114,18 @@ public class Boss : MonoBehaviour
             if(randomNumber < 40){
                 OnAttack1?.Invoke(this, EventArgs.Empty);
                 attack1.Shoot();
-                attackTime = 60f;
+                AudioManager.Instance.Play("BossFirstAttack");
+                attackTime = 40f;
             }else if(randomNumber < 60){
                 OnAttack2?.Invoke(this, EventArgs.Empty);
+                AudioManager.Instance.Play("BossSecondAttack");
                 Invoke("SecondAttack", 0.3f);
-                attackTime = 80f;
+                attackTime = 60f;
             }else{
                 OnAttack2?.Invoke(this, EventArgs.Empty);
+                AudioManager.Instance.Play("BossThirdAttack");
                 Invoke("ThirdAttack", 0.3f);
-                attackTime = 80f;
+                attackTime = 60f;
             }
             timeBtwShots = startTimeBtwShots;
         }else{
@@ -128,6 +138,7 @@ public class Boss : MonoBehaviour
             enemyBody.velocity = moveDir * enemySpeed;
         }else{
             enemyBody.velocity = Vector2.zero;
+            attackTime -= 1;
         }
     }
 
@@ -182,7 +193,14 @@ public class Boss : MonoBehaviour
             Effects.Instance.PlayBossDeath(transform.position);
            bossHealthBar.DestroyHealthBar();
            Instantiate(endGame, transform.position, Quaternion.identity);
+           AudioManager.Instance.Stop("BossTheme");
+           AudioManager.Instance.Play("BossDeath");
+           AudioManager.Instance.Play("FirefliesTheme");
             Destroy(gameObject);
         }
+    }
+
+    public void ActivateBar(bool active) {
+        healthBar.SetActive(active);
     }
 }

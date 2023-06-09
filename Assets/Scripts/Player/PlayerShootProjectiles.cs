@@ -39,6 +39,7 @@ public class PlayerShootProjectiles : MonoBehaviour
 
 
         CinemachineShake.Instance.ShakeCamera(3f, 0.25f);
+        AudioManager.Instance.Play("PlayerShoot");
         aimAnimator.SetTrigger("Shoot");
 
     }

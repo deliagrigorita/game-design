@@ -53,13 +53,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MenuTheme
     clip: {fileID: 8300000, guid: f23b8cf3c4059d246ba29b353ff306a2, type: 3}
-    volume: 1
+    volume: 0.783
     pitch: 1.05
     loop: 1
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 8f0a2b71c409a734686c9c7405e1f151, type: 3}
-    volume: 1
+    volume: 0.297
     pitch: 1.05
     loop: 1
     source: {fileID: 0}
@@ -108,6 +108,66 @@ MonoBehaviour:
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
     volume: 1
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: WinTheme
+    clip: {fileID: 8300000, guid: 52d8ea7deae13ac40a321b208fe4dba9, type: 3}
+    volume: 0.578
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: AngelProjectileStart
+    clip: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+    volume: 0.859
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerShoot
+    clip: {fileID: 8300000, guid: 65201ddabb4144f6a8fb9480120b7656, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: ExplodeGhoul
+    clip: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: BossFirstAttack
+    clip: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: BulletImpact
+    clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: BossSecondAttack
+    clip: {fileID: 8300000, guid: d1afd3f4d23c24f418ffc315afb04965, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: BossThirdAttack
+    clip: {fileID: 8300000, guid: 7a9de5c4d998126449cf964a6b27a8b0, type: 3}
+    volume: 0.768
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: BossDeath
+    clip: {fileID: 8300000, guid: 9ed60d22095804343becbd65abcb1943, type: 3}
+    volume: 0.73
+    pitch: 1.05
+    loop: 0
+    source: {fileID: 0}
+  - name: FirefliesTheme
+    clip: {fileID: 8300000, guid: 4330ef8df343e284d84678b1af50b496, type: 3}
+    volume: 0.214
     pitch: 1.05
     loop: 0
     source: {fileID: 0}

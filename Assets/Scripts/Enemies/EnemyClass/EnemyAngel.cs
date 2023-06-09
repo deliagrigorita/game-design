@@ -15,7 +15,7 @@ public class EnemyAngel : Enemy
         shooting = false;
         timeBtwRounds = 0;
 
-        enemyHealthSystem = new EnemyHealthSystem(150);
+        enemyHealthSystem = new EnemyHealthSystem(120);
         enemyHealthBar.Setup(enemyHealthSystem);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyShootProjectiles = transform.GetComponentsInChildren<EnemyShootProjectile>();
@@ -57,6 +57,7 @@ public class EnemyAngel : Enemy
             timeBtwRounds = 0;
         }
         else if(timeBtwRounds <= 0){
+            AudioManager.Instance.Play("AngelProjectileStart");
             foreach(EnemyShootProjectile gun in enemyShootProjectiles){
                 gun.EnemyShoot();
             }

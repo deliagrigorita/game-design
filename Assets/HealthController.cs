@@ -47,6 +47,13 @@ public class HealthController : MonoBehaviour
         playerHealth -= amount;
         UpdateHealth();
     }
+
+    public void AddHealth(){
+        if(playerHealth < 7){
+            playerHealth += 1;
+            UpdateHealth();
+        }
+    }
   
 
 }

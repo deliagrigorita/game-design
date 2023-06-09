@@ -53,6 +53,7 @@ public class Bullet : MonoBehaviour
         if(target != null){
             target.Damage();
             Effects.Instance.PlayDefaultBulletHitEnemy(transform.position);
+            AudioManager.Instance.Play("BulletImpact");
             Destroy(gameObject);
         }
     }

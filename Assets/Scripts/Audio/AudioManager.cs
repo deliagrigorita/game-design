@@ -37,6 +37,12 @@ public class AudioManager : MonoBehaviour
          {
             Play("MenuTheme");
          }
+         else if(sceneName == "WinGame"){
+            Play("WinTheme");
+         }
+         else if(sceneName == "EndScene"){
+            Play("PlayerDeath");
+         }
     }
 
     // Update is called once per frame
@@ -54,6 +60,16 @@ public class AudioManager : MonoBehaviour
         else{
             Debug.Log("Cant play sound: " + s + " !");
         }
+    }
 
+    public void Stop(String name){
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if(s != null){
+            s.source.Stop();
+        }
+        else{
+            Debug.Log("Cant stop sound: " + s + " !");
+        }
     }
 }

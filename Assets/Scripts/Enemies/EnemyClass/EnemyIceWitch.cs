@@ -6,7 +6,7 @@ public class EnemyIceWitch : Enemy
 {
     void Start()
     {
-        enemyHealthSystem = new EnemyHealthSystem(200);
+        enemyHealthSystem = new EnemyHealthSystem(160);
         enemyHealthBar.Setup(enemyHealthSystem);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyShootProjectiles = transform.GetComponentsInChildren<EnemyShootProjectile>();
@@ -14,6 +14,7 @@ public class EnemyIceWitch : Enemy
 
     protected override void Shoot(){
         if(timeBtwShots <= 0){
+            AudioManager.Instance.Play("IceProjectileStart");
             foreach(EnemyShootProjectile gun in enemyShootProjectiles){
                 Effects.Instance.PlayEnemyIceWitchAttack(gun.transform.position);
                 gun.EnemyShoot();

@@ -35,6 +35,7 @@ public class EnemyProjectile : MonoBehaviour
 
     public void DamagePlayer(Collider2D other){
         if(other.CompareTag("Player")){
+            AudioManager.Instance.Play("PlayerHit");
             HealthController.Instance.Damage(1);
         }
     }
