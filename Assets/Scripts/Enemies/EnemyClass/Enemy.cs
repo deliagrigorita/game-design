@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Shoot(){
         if(timeBtwShots <= 0){
+            AudioManager.Instance.Play("FireballStart");
             foreach(EnemyShootProjectile gun in enemyShootProjectiles){
                 Effects.Instance.PlayEnemyWizardAttack(gun.transform.position);
                 gun.EnemyShoot();
@@ -131,6 +132,7 @@ public class Enemy : MonoBehaviour
         enemyHealthSystem.Damage(10);
         if(enemyHealthSystem.GetHealth() == 0){
             Effects.Instance.PlayEnemyDeath(transform.position);
+            AudioManager.Instance.Play("EnemyDeath");
             Destroy(gameObject);
         }
     }

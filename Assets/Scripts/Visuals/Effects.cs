@@ -23,6 +23,8 @@ public class Effects : MonoBehaviour
     public Transform bossThirdAttackHit;
     public Transform enemyDeath;
     public Transform bossDeath;
+    public Transform pickupHeart;
+    public Transform endGame;
 
     private void Awake() {
         Instance = this;
@@ -98,6 +100,14 @@ public class Effects : MonoBehaviour
 
     public void PlayBossDeath(Vector2 position){
         Instantiate(bossDeath, position, Quaternion.identity);
+    }
+
+    public void PlayPickupHeart(Vector2 position){
+        Instantiate(pickupHeart, position, Quaternion.identity);
+    }
+
+    public void PlayEndGame(Vector2 position){
+        Instantiate(endGame, position, Quaternion.identity);
     }
 }
 

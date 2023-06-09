@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class HealthController : MonoBehaviour
 {
+
     public static HealthController Instance{get; private set;}
 
     public int playerHealth;
@@ -24,7 +27,7 @@ public class HealthController : MonoBehaviour
     {
          if (playerHealth <= 0)
          {
-            //restart game
+           SceneManager.LoadScene("EndScene");
          }
 
         for (int i = 0; i < hearts.Length; i++)
@@ -43,6 +46,13 @@ public class HealthController : MonoBehaviour
     public void Damage(int amount){
         playerHealth -= amount;
         UpdateHealth();
+    }
+
+    public void AddHealth(){
+        if(playerHealth < 7){
+            playerHealth += 1;
+            UpdateHealth();
+        }
     }
   
 

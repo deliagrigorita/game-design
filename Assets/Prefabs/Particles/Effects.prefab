@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8630017273024516496
+--- !u!1 &6768643970740729194
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8630017273024516498}
-  - component: {fileID: 8630017273024516499}
+  - component: {fileID: 1229682027392985995}
+  - component: {fileID: 5212030760366508633}
   m_Layer: 0
   m_Name: Effects
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8630017273024516498
+--- !u!4 &1229682027392985995
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8630017273024516496}
+  m_GameObject: {fileID: 6768643970740729194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.1987672, y: 4.101994, z: -0.013127137}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8630017273024516499
+--- !u!114 &5212030760366508633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8630017273024516496}
+  m_GameObject: {fileID: 6768643970740729194}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e783637ebc63e78488a3ff56ffe080bc, type: 3}
@@ -56,4 +56,11 @@ MonoBehaviour:
   enemyAngelHit: {fileID: 623530616310233997, guid: aceb48ca082560a4081c40552827b860, type: 3}
   enemyBatAttack: {fileID: 2039013019411682504, guid: d2c91d6e9f160914a8839f4d7186ac8f, type: 3}
   enemyBatHit: {fileID: 7334201710958325604, guid: 9341875ec8f19614cabe5583dbf48b22, type: 3}
+  bossFirstAttack: {fileID: 1420297781342410720, guid: c33ebd54086f8114783ece53a01ca6e2, type: 3}
+  bossFirstAttackHit: {fileID: 404854985715712637, guid: 4a36dc70cac38404980516343dcf8a87, type: 3}
+  bossThirdAttack: {fileID: 8580001964095981300, guid: 377528dc158a2814f94c12ae99224c53, type: 3}
+  bossThirdAttackHit: {fileID: 5052055477328377278, guid: 3456e26571a38b64983537684fcacc80, type: 3}
   enemyDeath: {fileID: 6428536060011801189, guid: 7feee13fdf4136748a3a34edef549854, type: 3}
+  bossDeath: {fileID: 6573140013549135952, guid: bfa95b9a1b3551d428cf6fbd47583054, type: 3}
+  pickupHeart: {fileID: 4103162022554582561, guid: b305c0db247bdd047bc811f325d0cde8, type: 3}
+  endGame: {fileID: 6186158170167956944, guid: 3842821b62f75ea42a9628ddb13652ce, type: 3}

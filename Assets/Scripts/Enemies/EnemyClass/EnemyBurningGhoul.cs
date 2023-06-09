@@ -52,6 +52,7 @@ public class EnemyBurningGhoul : Enemy
 
             obj.GetComponent<Rigidbody2D>().AddForce(dir * force); 
         }
+        AudioManager.Instance.Play("ExplodeGhoul");
         Destroy(gameObject);
     }
 }
