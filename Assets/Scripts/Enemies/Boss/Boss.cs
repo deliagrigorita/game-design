@@ -15,6 +15,7 @@ public class Boss : MonoBehaviour
     public int assignedRoom = int.MaxValue / 2;
     protected GameObject healthBar;
 
+    protected GameObject healthBar;
     protected Player playerObject;
     protected Transform player;
     protected float timeBtwShots;
